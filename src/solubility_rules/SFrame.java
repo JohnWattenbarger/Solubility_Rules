@@ -16,10 +16,9 @@ Description:
     - Creates a window to calculate solubility or display solubility rules
 
 Last Edit:
-    - Finished adding the solubility rules
-    - added isSlightlySoluble()
-    - changed button, label, textField, and colors to variable names
-    - documented isSoluble()
+    - Added more documentation
+    - Added "Solubility_Rules.png" to the project file
+    - Changed the "Solubility_Rules" image to scale to the new window
 
 Next Edit:
     - Change the solubility tests from a boolean to an integer
@@ -30,7 +29,6 @@ Next Edit:
     - Change the Button/TextField/Label widths/heights to constants
     - Possibly add a hints button at the top of the window
     - Edit the error message popup so it works
-    - Finish Documentation
 
 Possible Future Edits:
     - Add a periodic table picture/link
@@ -162,14 +160,14 @@ public class SFrame  extends Frame implements ActionListener
             try
             {
                 img = ImageIO.read(new File(
-                        "C:/Users/John/Pictures/Solubility_Rules.png"));
+                        "images/Solubility_Rules.png"));
             }
             catch (Throwable e)
             {
                 Dialog x = new Dialog(this, e.getMessage());
             }
             
-            ImageIcon icon=new ImageIcon(img);
+            ImageIcon icon=new ImageIcon(img.getScaledInstance(1140, 680, Image.SCALE_DEFAULT));
             JFrame frame=new JFrame();
             frame.setLayout(new FlowLayout());
             frame.setLocation(2000, 200);
