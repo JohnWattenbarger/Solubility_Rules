@@ -54,6 +54,9 @@ public class SFrame  extends Frame implements ActionListener
     private int button_width = 350, button_height = 100, text_field_width = 450,
             text_field_height = 50, label_width = 200, label_height = 50;
     
+    /**
+     * Creates a default SFrame
+     */
     public SFrame()
     {
         // set up window
@@ -122,6 +125,11 @@ public class SFrame  extends Frame implements ActionListener
         this.add(solution);
     }
     
+    /**
+     * An action listener, that checks if any buttons on SFrame are clicked
+     * 
+     * @param e1 ActionEvent
+     */
     public void actionPerformed(ActionEvent e1)
     {
         if (e1.getSource() == calculate)
@@ -173,6 +181,15 @@ public class SFrame  extends Frame implements ActionListener
         }
     }
     
+    /**
+     * Gets the information from the Text Field "field_cation". Takes different 
+     * forms of inputting the cation (ex: "NA", "Sodium", "NA+") and converts it
+     * to its elemental form (ex: "Na"). The elemental form is returned. Case is
+     * ignored.
+     * 
+     * @param c A cation String
+     * @return The cation String in elemental form
+     */
     public String setCation(String c)
     {
         switch(c.toUpperCase())
@@ -217,6 +234,15 @@ public class SFrame  extends Frame implements ActionListener
         return c;
     }
     
+    /**
+     * Gets the information from the Text Field "field_anion". Takes different 
+     * forms of inputting the anion (ex: "NO3", "Nitrate", "NO3-") and converts it
+     * to its elemental form (ex: "NO3"). The elemental form is returned. Case 
+     * is ignored.
+     * 
+     * @param a An anion String
+     * @return The anion String in elemental form
+     */
     public String setAnion(String a)
     {
         switch(a.toUpperCase())
@@ -308,8 +334,15 @@ public class SFrame  extends Frame implements ActionListener
         return soluble;
     }
     
-    
-    
+    /**
+     * Given a cation and an anion, this function determines whether the
+     * cation + anion combination is slightly soluble or not. Returns true for 
+     * if it is slightly soluble, and false if it is not slightly soluble.
+     * 
+     * @param c The name of a cation
+     * @param a The name of an anion
+     * @return True if soluble, false if insoluble
+     */
     public boolean isSlightlySoluble(String c, String a)
     {
         boolean slightly_soluble = false;
